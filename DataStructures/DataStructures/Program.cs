@@ -25,7 +25,7 @@ namespace DataStructures
             //}
             //Array.pop();
             //Console.ReadLine(); 
-            #endregion
+         #endregion
 
             #region ReverseString
             //ReverseString reverseString = new ReverseString();
@@ -48,6 +48,13 @@ namespace DataStructures
             //Console.Write("Array after merging\n");
             //for (int i = 0; i < n1 + n2; i++)
             //    Console.Write(arr3[i] + " "); 
+            #endregion
+
+            #region HashTable
+            //HashTable.HashTable h = new HashTable.HashTable(2);
+            //h.set("grapes", 1000);
+            //h.set("apples", 54);
+            //h.keys(); 
             #endregion
         }
     }
