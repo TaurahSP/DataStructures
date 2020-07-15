@@ -1,4 +1,5 @@
 ﻿using DataStructures.Arrays;
+using DataStructures.HashTable;
 using System;
 using System.Linq;
 
@@ -8,7 +9,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-        #region Array
+            #region Array
             //var Array = new ArrayImplementation();
             //Array.push("hi");
             //Array.push("you");
@@ -25,7 +26,7 @@ namespace DataStructures
             //}
             //Array.pop();
             //Console.ReadLine(); 
-         #endregion
+            #endregion
 
             #region ReverseString
             //ReverseString reverseString = new ReverseString();
@@ -56,6 +57,10 @@ namespace DataStructures
             //h.set("apples", 54);
             //h.keys(); 
             #endregion
+
+            RecurringInteger recurring = new RecurringInteger();
+            int[] array = new int[] { 1, 3, 3, 5 };
+            recurring.findrecurring(array);
         }
     }
 }
