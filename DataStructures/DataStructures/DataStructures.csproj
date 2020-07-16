@@ -48,6 +48,7 @@
     <Compile Include="Arrays\ReverseString.cs" />
     <Compile Include="HashTable\HashTable.cs" />
     <Compile Include="HashTable\RecurringInteger.cs" />
+    <Compile Include="LinkedList\LinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
