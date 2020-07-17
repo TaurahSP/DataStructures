@@ -1,5 +1,6 @@
 ﻿using DataStructures.Arrays;
 using DataStructures.HashTable;
+using DataStructures.LinkedList;
 using System;
 using System.Linq;
 
@@ -58,9 +59,13 @@ namespace DataStructures
             //h.keys(); 
             #endregion
 
-            RecurringInteger recurring = new RecurringInteger();
-            int[] array = new int[] { 1, 3, 3, 5 };
-            recurring.findrecurring(array);
+            #region RecurringInteger
+            //RecurringInteger recurring = new RecurringInteger();
+            //int[] array = new int[] { 1, 3, 3, 5 };
+            //recurring.findrecurring(array); 
+            #endregion
+LinkedList.LinkedList test = new LinkedList.LinkedList(5);
+            test.append(10);
         }
     }
 }
