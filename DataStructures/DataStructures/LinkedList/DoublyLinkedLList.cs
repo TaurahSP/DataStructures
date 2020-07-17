@@ -126,16 +126,4 @@ public class DoublyLinkedList
         }
         return currentNode;
     }
-
-    static void Main(string[] args)
-    {
-        DoublyLinkedList d = new DoublyLinkedList(10);
-        d.append(7);
-        d.append(16);
-        d.prepend(5);
-        d.insert(1, 99);
-        d.remove(1);
-
-        d.printList();
-    }
 }
