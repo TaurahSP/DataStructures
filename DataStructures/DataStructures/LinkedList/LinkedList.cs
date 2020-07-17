@@ -2,13 +2,16 @@
 
 namespace DataStructures.LinkedList
 {
-    public class DoubleNode
+    /// <summary>
+    /// LinkedList implementation
+    /// </summary>
+    public class Node
     {
         public int value { get; set; }
 
-        public DoubleNode next { get; set; }
+        public Node next { get; set; }
 
-        public DoubleNode(int value)
+        public Node(int value)
         {
             this.value = value;
             this.next = null;
@@ -17,20 +20,20 @@ namespace DataStructures.LinkedList
 
     public class LinkedList
     {
-        private DoubleNode head;
-        private DoubleNode tail;
+        private Node head;
+        private Node tail;
         private int length;
 
         public LinkedList(int value)
         {
-            this.head = new DoubleNode(value);
+            this.head = new Node(value);
             this.tail = this.head;
             this.length = 1;
         }
 
         public void append(int value)
         {
-            DoubleNode newNode = new DoubleNode(value);
+            Node newNode = new Node(value);
             this.tail.next = newNode;
             this.tail = newNode;
             this.length++;
@@ -38,7 +41,7 @@ namespace DataStructures.LinkedList
 
         public void prepend(int value)
         {
-            DoubleNode newNode = new DoubleNode(value);
+            Node newNode = new Node(value);
             newNode.next = this.head;
             this.head = newNode;
             this.length++;
@@ -59,10 +62,10 @@ namespace DataStructures.LinkedList
                 return;
             }
 
-            DoubleNode newNode = new DoubleNode(value);
+            Node newNode = new Node(value);
 
-            DoubleNode leader = traverseToIndex(index - 1);
-            DoubleNode holdingPointer = leader.next;
+            Node leader = traverseToIndex(index - 1);
+            Node holdingPointer = leader.next;
 
             leader.next = newNode;
             newNode.next = holdingPointer;
@@ -78,20 +81,20 @@ namespace DataStructures.LinkedList
                 return;
             }
 
-            DoubleNode leader = traverseToIndex(index - 1);
-            DoubleNode nodeToRemove = leader.next;
+            Node leader = traverseToIndex(index - 1);
+            Node nodeToRemove = leader.next;
             leader.next = nodeToRemove.next;
             this.length--;
         }
 
         public void reverse()
         {
-            DoubleNode first = head;
+            Node first = head;
             tail = head;
-            DoubleNode second = first.next;
+            Node second = first.next;
             for(int i = 0; i < length - 1; i++)
             {
-                DoubleNode temp = second.next;
+                Node temp = second.next;
                 second.next = first;
                 first = second;
                 second = temp;
@@ -106,7 +109,7 @@ namespace DataStructures.LinkedList
             {
                 return;
             }
-            DoubleNode current = this.head;
+            Node current = this.head;
             while(current != null)
             {
                 Console.Write("-->" + current.value);
@@ -117,17 +120,17 @@ namespace DataStructures.LinkedList
 
         public int getLength() { return this.length; }
 
-        public DoubleNode getHead() { return this.head; }
+        public Node getHead() { return this.head; }
 
-        public DoubleNode getTail() { return this.tail; }
+        public Node getTail() { return this.tail; }
 
         private int wrapIndex(int index) { return Math.Max(Math.Min(index, this.length - 1), 0); }
 
-        private DoubleNode traverseToIndex(int index)
+        private Node traverseToIndex(int index)
         {
             int counter = 0;
             index = wrapIndex(index);
-            DoubleNode currentNode = head;
+            Node currentNode = head;
             while(counter != index)
             {
                 currentNode = currentNode.next;
