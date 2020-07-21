@@ -47,11 +47,11 @@ namespace DataStructures.BinaryTree
             }
         }
 
-        public int Lookup(int value)
+        public Node Lookup(int value)
         {
             if(value == root.value)
             {
-                return value;
+                return root;
             }
 
             Node temp = root;
@@ -62,21 +62,67 @@ namespace DataStructures.BinaryTree
                 {
                     if(temp.left.value == value)
                     {
-                        return value;
+                        return temp.left;
                     }
                     temp = temp.left;
                 } else
                 {
-
                     if(temp.right.value == value)
                     {
-                        return value;
+                        return temp.right;
                     }
                     temp = temp.right;
                 }
             }
 
-            return -1111111111;
+            return null;
+        }
+
+        public void remove(int value)
+        {
+            //get node of the value to remove
+            var removenode = Lookup(value);
+
+            if(removenode == null)
+            {
+                return;
+            }
+
+            //checking if leaf node
+            if(removenode.left == null && removenode.right == null)
+            {
+                removenode = null;
+                return;
+            }
+
+            //if no right node 
+            if(removenode.right == null)
+            {
+                removenode = removenode.left;
+                return;
+            }
+
+            //Go to right node and find left most node
+            var temp = removenode.right;
+
+            while(temp.left != null)
+            {
+                temp = temp.left;
+            }
+            //replacing node to remove with left most value
+            var pointernode = removenode;
+            removenode.value = temp.value;
+            removenode.right = pointernode.right;
+            removenode.left = pointernode.left;
+
+            //check if node has right child
+            if(temp.right == null)
+            {
+                temp = null;
+                return;
+            }
+            //replacing leftmost value with its right node
+            temp = temp.right;
         }
     }
 }

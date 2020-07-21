@@ -82,9 +82,12 @@ namespace DataStructures
             bt.insert(170);
             bt.insert(15);
             bt.insert(1);
+            bt.insert(5);
+            bt.insert(7);
+            bt.insert(5);
+            bt.insert(6);
 
-            var test = bt.Lookup(6);
-            var test1 = bt.Lookup(10);
+            bt.remove(4);
         }
     }
 }
