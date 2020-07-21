@@ -1,6 +1,4 @@
-﻿using DataStructures.Arrays;
-using DataStructures.HashTable;
-using DataStructures.LinkedList;
+﻿using DataStructures.BinaryTree;
 using System;
 using System.Linq;
 
@@ -76,11 +74,17 @@ namespace DataStructures
             //d.printList(); 
             #endregion
 
-            var stack = new DataStructures.Stack.Stack();
-            stack.push(1);
-            stack.push(2);
-            stack.pop();
-            stack.pop();
+            BinarySearchTree bt = new BinarySearchTree();
+            bt.insert(9);
+            bt.insert(4);
+            bt.insert(6);
+            bt.insert(20);
+            bt.insert(170);
+            bt.insert(15);
+            bt.insert(1);
+
+            var test = bt.Lookup(6);
+            var test1 = bt.Lookup(10);
         }
     }
 }
