@@ -80,49 +80,59 @@ namespace DataStructures.BinaryTree
 
         public void remove(int value)
         {
-            //get node of the value to remove
-            var removenode = Lookup(value);
-
-            if(removenode == null)
+            if(root == null)
             {
                 return;
             }
 
-            //checking if leaf node
-            if(removenode.left == null && removenode.right == null)
-            {
-                removenode = null;
-                return;
+            Node nodeToRemove = root;
+            Node parentNode = null;
+            while(nodeToRemove.value != value)
+            { //Searching for the node to remove and it's parent
+                parentNode = nodeToRemove;
+                if(value < nodeToRemove.value)
+                {
+                    nodeToRemove = nodeToRemove.left;
+                } else if(value > nodeToRemove.value)
+                {
+                    nodeToRemove = nodeToRemove.right;
+                }
             }
 
-            //if no right node 
-            if(removenode.right == null)
-            {
-                removenode = removenode.left;
-                return;
+            Node replacementNode = null;
+            if(nodeToRemove.right != null)
+            { //We have a right node
+                replacementNode = nodeToRemove.right;
+                if(replacementNode.left == null)
+                { //We don't have a left node
+                    replacementNode.left = nodeToRemove.left;
+                } else
+                { //We have a have a left node, lets find the leftmost
+                    Node replacementParentNode = nodeToRemove;
+                    while(replacementNode.left != null)
+                    {
+                        replacementParentNode = replacementNode;
+                        replacementNode = replacementNode.left;
+                    }
+                    replacementParentNode.left = null;
+                    replacementNode.left = nodeToRemove.left;
+                    replacementNode.right = nodeToRemove.right;
+                }
+            } else if(nodeToRemove.left != null)
+            {//We only have a left node
+                replacementNode = nodeToRemove.left;
             }
 
-            //Go to right node and find left most node
-            var temp = removenode.right;
-
-            while(temp.left != null)
+            if(parentNode == null)
             {
-                temp = temp.left;
+                root = replacementNode;
+            } else if(parentNode.left == nodeToRemove)
+            { //We are a left child
+                parentNode.left = replacementNode;
+            } else
+            { //We are a right child
+                parentNode.right = replacementNode;
             }
-            //replacing node to remove with left most value
-            var pointernode = removenode;
-            removenode.value = temp.value;
-            removenode.right = pointernode.right;
-            removenode.left = pointernode.left;
-
-            //check if node has right child
-            if(temp.right == null)
-            {
-                temp = null;
-                return;
-            }
-            //replacing leftmost value with its right node
-            temp = temp.right;
         }
     }
 }
