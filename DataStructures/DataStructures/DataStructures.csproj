@@ -48,6 +48,7 @@
     <Compile Include="Arrays\ReverseString.cs" />
     <Compile Include="BinaryTree\BinarySearchTree.cs" />
     <Compile Include="BinaryTree\Node.cs" />
+    <Compile Include="Graph\graph.cs" />
     <Compile Include="HashTable\HashTable.cs" />
     <Compile Include="HashTable\RecurringInteger.cs" />
     <Compile Include="LinkedList\DoublyLinkedLList.cs" />

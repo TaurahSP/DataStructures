@@ -1,4 +1,5 @@
 ﻿using DataStructures.BinaryTree;
+using DataStructures.Graph;
 using System;
 using System.Linq;
 
@@ -8,7 +9,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            #region Array
+        #region Array
             //var Array = new ArrayImplementation();
             //Array.push("hi");
             //Array.push("you");
@@ -74,20 +75,42 @@ namespace DataStructures
             //d.printList(); 
             #endregion
 
-            BinarySearchTree bt = new BinarySearchTree();
-            bt.insert(9);
-            bt.insert(4);
-            bt.insert(6);
-            bt.insert(20);
-            bt.insert(170);
-            bt.insert(15);
-            bt.insert(1);
-            bt.insert(5);
-            bt.insert(7);
-            bt.insert(5);
-            bt.insert(6);
+            #region binaryTree
+            //BinarySearchTree bt = new BinarySearchTree();
+            //bt.insert(9);
+            //bt.insert(4);
+            //bt.insert(6);
+            //bt.insert(20);
+            //bt.insert(170);
+            //bt.insert(15);
+            //bt.insert(1);
+            //bt.insert(5);
+            //bt.insert(7);
+            //bt.insert(5);
+            //bt.insert(6);
 
-            bt.remove(4);
+            //bt.remove(4); 
+            #endregion
+
+            #region Graph
+            //graph graph = new graph();
+            //graph.addVertex(0);
+            //graph.addVertex(1);
+            //graph.addVertex(2);
+            //graph.addVertex(3);
+            //graph.addVertex(4);
+            //graph.addVertex(5);
+            //graph.addVertex(6);
+            //graph.addEdge(3, 1);
+            //graph.addEdge(3, 4);
+            //graph.addEdge(4, 2);
+            //graph.addEdge(4, 5);
+            //graph.addEdge(1, 2);
+            //graph.addEdge(1, 0);
+            //graph.addEdge(0, 2);
+            //graph.addEdge(6, 5);
+            //graph.showConnections(); 
+            #endregion
         }
     }
 }
