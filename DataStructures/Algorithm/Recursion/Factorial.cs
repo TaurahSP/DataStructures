@@ -20,9 +20,11 @@ namespace Algorithm.Recursion
         public int findFactorialRecursive(int number)
         {
             if(number == 1)
-            {
                 return 1;
-            }
+
+            if(number == 2)
+                return 2;
+
             return number * findFactorialRecursive(number - 1);
         }
 
