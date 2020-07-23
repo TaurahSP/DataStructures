@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithm.Recursion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
+            var factorial = new Factorial().findFactorialIterative(4);
         }
     }
 }
