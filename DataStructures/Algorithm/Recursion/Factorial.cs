@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithm.Recursion
+﻿namespace Algorithm.Recursion
 {
     /// <summary>
     /// write two functions that finds the factorial of any number. one should use recursive,the other should jsut use a
