@@ -12,6 +12,7 @@ namespace Algorithm
         static void Main(string[] args)
         {
             var factorial = new Factorial().findFactorialIterative(4);
+            var recursive = new Factorial().findFactorialRecursive(4);
         }
     }
 }

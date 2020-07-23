@@ -12,7 +12,19 @@ namespace Algorithm.Recursion
     /// </summary>
     public class Factorial
     {
-        public int findFactorialRecursive(int number) { return number; }
+        /// <summary>
+        /// function to find factorial of a number using recursion
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public int findFactorialRecursive(int number)
+        {
+            if(number == 1)
+            {
+                return 1;
+            }
+            return number * findFactorialRecursive(number - 1);
+        }
 
         /// <summary>
         /// fucntion to find factorial of a number using for loop
