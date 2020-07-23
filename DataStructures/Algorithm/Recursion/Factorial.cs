@@ -36,9 +36,12 @@ namespace Algorithm.Recursion
             if(number == 1)
                 return 1;
 
+            if(number == 2)
+                return 2;
+
             int factorial = 1;
 
-            for(int i = number; i > 1; i--)
+            for(int i = number; i >= 2; i--)
             {
                 factorial = factorial * i;
             }
