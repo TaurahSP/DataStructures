@@ -11,12 +11,8 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            #region Factorial
-            //var factorial = new Factorial().findFactorialIterative(4);
-            //var recursive = new Factorial().findFactorialRecursive(4); 
-            #endregion
-
-            var test = new Fibonacci().FibonacciIterative(8);
+            ReverseString a = new ReverseString();
+            var test = a.reverseStringRecursively("keshav");
         }
     }
 }
