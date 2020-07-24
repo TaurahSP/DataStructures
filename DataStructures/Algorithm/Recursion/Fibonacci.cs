@@ -10,8 +10,41 @@ namespace Algorithm.Recursion
     /// </summary>
     public class Fibonacci
     {
-        public int FibonnaciRecursive(int number) { return number; }
+        //O(2^n)
+        public int FibonacciRecursive(int number)
+        {
+            if(number < 2)
+            {
+                return number;
+            }
+            return FibonacciRecursive(number - 1) + FibonacciRecursive(number - 2);
+        }
 
-        public int FibonacciIterative(int number) { return number; }
+        //o(n)
+        public int FibonacciIterative(int number)
+        {
+            int first = 0;
+            int second = 1;
+            int third = 0;
+
+            if(number == 1)
+                return first;
+
+            if(number == 2)
+                return second;
+
+            if(number == 3)
+                return first + second;
+
+            while(number != 1)
+            {
+                third = first + second;
+                first = second;
+                second = third;
+                number--;
+            }
+
+            return third;
+        }
     }
 }
