@@ -1,4 +1,4 @@
-# DataStructures
+# Data Structures & Algorithms
 This repository contains my implementations of several algorithms and data structures in C#
 
 Pull requests
