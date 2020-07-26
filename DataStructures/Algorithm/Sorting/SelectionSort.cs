@@ -11,7 +11,7 @@
             {
                 int indexminimum = i;
 
-                for(int j = i; j < unsortedlist.Length; j++)
+                for(int j = i + 1; j < unsortedlist.Length; j++)
                 {
                     if(unsortedlist[j] < unsortedlist[indexminimum])
                     {
