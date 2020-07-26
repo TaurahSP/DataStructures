@@ -1,4 +1,5 @@
-﻿using DataStructures.BinaryTree;
+﻿using DataStructures.Arrays;
+using DataStructures.BinaryTree;
 using DataStructures.Graph;
 using System;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-        #region Array
+            #region Array
             //var Array = new ArrayImplementation();
             //Array.push("hi");
             //Array.push("you");
@@ -111,6 +112,10 @@ namespace DataStructures
             //graph.addEdge(6, 5);
             //graph.showConnections(); 
             #endregion
+
+            ReverseArray reverseArray = new ReverseArray();
+            int[] test = new int[] { 1, 2, 3, 4 };
+            reverseArray.reverse(test);
         }
     }
 }

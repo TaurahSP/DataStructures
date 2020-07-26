@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Arrays\Arrays.cs" />
     <Compile Include="Arrays\MergeArrays.cs" />
+    <Compile Include="Arrays\ReverseArray.cs" />
     <Compile Include="Arrays\ReverseString.cs" />
     <Compile Include="BinaryTree\BinarySearchTree.cs" />
     <Compile Include="BinaryTree\Node.cs" />
