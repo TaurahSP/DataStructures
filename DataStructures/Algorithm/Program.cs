@@ -1,4 +1,5 @@
 ﻿using Algorithm.Recursion;
+using Algorithm.Sorting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,9 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            ReverseString a = new ReverseString();
-            var test = a.reverseStringRecursively("keshav");
+            BubbleSort bubbleSort = new BubbleSort();
+            int[] test = new int[] { 7, 8, 6, 3, 10, 1 };
+            bubbleSort.sort(test);
         }
     }
 }
