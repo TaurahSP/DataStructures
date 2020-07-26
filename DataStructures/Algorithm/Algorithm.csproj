@@ -49,6 +49,7 @@
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\ReverseString.cs" />
     <Compile Include="Sorting\BubbleSort.cs" />
+    <Compile Include="Sorting\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

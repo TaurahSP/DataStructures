@@ -12,7 +12,7 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            BubbleSort bubbleSort = new BubbleSort();
+            SelectionSort bubbleSort = new SelectionSort();
             int[] test = new int[] { 7, 8, 6, 3, 10, 1 };
             bubbleSort.sort(test);
         }
