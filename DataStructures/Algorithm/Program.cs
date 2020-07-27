@@ -12,9 +12,9 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            SelectionSort bubbleSort = new SelectionSort();
-            int[] test = new int[] { 7, 8, 6, 3, 10, 1 };
-            bubbleSort.sort(test);
+            InsertionSort sort = new InsertionSort();
+            int[] array = new int[] { 6, 7, 8, 5, 1 };
+            sort.sort(array);
         }
     }
 }
