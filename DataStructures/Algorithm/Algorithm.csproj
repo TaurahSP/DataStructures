@@ -50,6 +50,7 @@
     <Compile Include="Recursion\ReverseString.cs" />
     <Compile Include="Sorting\BubbleSort.cs" />
     <Compile Include="Sorting\InsertionSort.cs" />
+    <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>

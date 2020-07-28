@@ -12,9 +12,9 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            InsertionSort sort = new InsertionSort();
-            int[] array = new int[] { 6, 7, 8, 5, 1 };
-            sort.sort(array);
+            MergeSort sort = new MergeSort();
+            int[] array = new int[] { 6, 7, 8, 5 };
+            sort.mergesort(array);
         }
     }
 }
