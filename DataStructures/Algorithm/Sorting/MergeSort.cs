@@ -5,53 +5,77 @@ namespace Algorithm.Sorting
 {
     public class MergeSort
     {
-        public int[] mergesort(int[]initiallist)
+        public int[] mergesort(int[]array)
         {
-            if(initiallist.Length == 1)
+            int[] left;
+            int[] right;
+            int[] result = new int[array.Length];
+            //As this is a recursive algorithm, we need to have a base case to 
+            //avoid an infinite recursion and therfore a stackoverflow
+            if(array.Length <= 1)
+                return array;
+
+            int midPoint = array.Length / 2;
+            left = new int[midPoint];
+
+            if(array.Length % 2 == 0)
+                right = new int[midPoint];
+            else
+                right = new int[midPoint + 1];
+
+            for(int i = 0; i < midPoint; i++)
+                left[i] = array[i];
+
+            int x = 0;
+            for(int i = midPoint; i < array.Length; i++)
             {
-                return initiallist;
+                right[x] = array[i];
+                x++;
             }
-
-            //split array
-            int half = (initiallist.Length / 2);
-            int halfindex = half - 1;
-            int righthalf = initiallist.Length - half;
-            int[] left = new int[half];
-            int[] right = new int[righthalf];
-
-            for(int i = 0; i <= halfindex; i++)
-            {
-                left[i] = initiallist[i];
-            }
-
-            int j = 0;
-
-            for(int i = half; i < initiallist.Length; i++)
-            {
-
-                right[j++] = initiallist[i];
-            }
-            return merge(mergesort(left), mergesort(right));
+            //Recursively sort the left array
+            left = mergesort(left);
+            //Recursively sort the right array
+            right = mergesort(right);
+            //Merge our two sorted arrays
+            result = merge(left, right);
+            return result;
         }
 
-        public int[] merge(int[] left, int [] right)
+        private  int[] merge(int[] left, int[] right)
         {
-            if(right.Length == 0)
-                return left;
-            int [] temp = new int[right.Length + left.Length];
+            int resultLength = right.Length + left.Length;
+            int[] result = new int[resultLength];
 
-            for(int i = 0; i < right.Length; i++)
+            int indexLeft = 0, indexRight = 0, indexResult = 0;
+
+            while(indexLeft < left.Length || indexRight < right.Length)
             {
-                if(right[i] < left[i])
+                if(indexLeft < left.Length && indexRight < right.Length)
                 {
-                    temp[i] = left[i];
-                } else
+                    if(left[indexLeft] <= right[indexRight])
+                    {
+                        result[indexResult] = left[indexLeft];
+                        indexLeft++;
+                        indexResult++;
+                    } else
+                    {
+                        result[indexResult] = right[indexRight];
+                        indexRight++;
+                        indexResult++;
+                    }
+                } else if(indexLeft < left.Length)
                 {
-                    temp[i] = right[i];
+                    result[indexResult] = left[indexLeft];
+                    indexLeft++;
+                    indexResult++;
+                } else if(indexRight < right.Length)
+                {
+                    result[indexResult] = right[indexRight];
+                    indexRight++;
+                    indexResult++;
                 }
             }
-
-            return temp;
+            return result;
         }
     }
 }
