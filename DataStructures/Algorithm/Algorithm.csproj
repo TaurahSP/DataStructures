@@ -52,6 +52,7 @@
     <Compile Include="Sorting\InsertionSort.cs" />
     <Compile Include="Sorting\MergeSort.cs" />
     <Compile Include="Sorting\SelectionSort.cs" />
+    <Compile Include="Traversal\BreadthFirstSearch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
