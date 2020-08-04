@@ -29,7 +29,7 @@ namespace Algorithm.Traversal
             return list;
         }
 
-        //Recurcive
+        //Recursive
         public  List<int> breathFirstSearchR(Queue<Node> queue, List<int> list)
         {
             if(queue.Count == 0)
