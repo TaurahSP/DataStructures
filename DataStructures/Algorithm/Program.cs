@@ -15,14 +15,6 @@ namespace Algorithm
             tree.insert(170);
             tree.insert(15);
             tree.insert(1);
-
-            DepthFirstSearch bfs = new DepthFirstSearch();
-            var result = bfs.DFSInOrder(tree.root);
-            foreach(var item in result)
-            {
-                Console.Write(item.ToString() + " ");
-            }
-            Console.WriteLine();
         }
     }
 }

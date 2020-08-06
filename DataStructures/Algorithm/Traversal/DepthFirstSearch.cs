@@ -6,32 +6,75 @@ namespace Algorithm.Traversal
 {
     public class DepthFirstSearch
     {
-        public List<int> DFSInOrder(Node node)
+        public Node root;
+        public DepthFirstSearch() { this.root = null; }
+
+        public List<int> DFSInOrder()
         {
             List<int> result = new List<int>();
-
-
-            return traverseInOrder(node, result);
+            traverseInOrder(this.root, result);
+            return result;
         }
 
-        public void DFSPostOrder()
+        public List<int> DFSPreOrder()
         {
+            List<int> result = new List<int>();
+            traversePreOrder(this.root, result);
+            return result;
         }
 
-        public void DFSPreOrder()
+        public List<int> DFSPostOrder()
         {
+            List<int> result = new List<int>();
+            traversePostOrder(this.root, result);
+            return result;
         }
 
-        public List<int> traverseInOrder(Node node, List<int> data)
+        public List<int> traverseInOrder(Node node, List<int> list)
         {
             if(node.left != null)
-                traverseInOrder(node.left, data);
-            data.Add(node.value);
+            {
+                traverseInOrder(node.left, list);
+            }
+            list.Add(node.value);
+            if(node.right != null)
+            {
+                traverseInOrder(node.right, list);
+            }
+
+            return list;
+        }
+
+        public List<int> traversePreOrder(Node node, List<int> list)
+        {
+            list.Add(node.value);
+            if(node.left != null)
+            {
+                traversePreOrder(node.left, list);
+            }
 
             if(node.right != null)
-                traverseInOrder(node.right, data);
+            {
+                traversePreOrder(node.right, list);
+            }
 
-            return data;
+            return list;
+        }
+
+        public List<int> traversePostOrder(Node node, List<int> list)
+        {
+            if(node.left != null)
+            {
+                traversePostOrder(node.left, list);
+            }
+
+            if(node.right != null)
+            {
+                traversePostOrder(node.right, list);
+            }
+            list.Add(node.value);
+
+            return list;
         }
     }
 }
