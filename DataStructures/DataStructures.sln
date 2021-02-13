@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{4B96FE84-D12B-42C3-A3D5-E51236C475A0}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CodingInterviewPython", "CodingInterviewPython\CodingInterviewPython.pyproj", "{7823A733-7220-4974-AF36-859B71A173A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{4B96FE84-D12B-42C3-A3D5-E51236C475A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B96FE84-D12B-42C3-A3D5-E51236C475A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B96FE84-D12B-42C3-A3D5-E51236C475A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7823A733-7220-4974-AF36-859B71A173A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7823A733-7220-4974-AF36-859B71A173A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
